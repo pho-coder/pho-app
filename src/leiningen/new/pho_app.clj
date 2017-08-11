@@ -11,4 +11,5 @@
               :sanitized (name-to-path name)}]
     (main/info "Generating fresh 'lein new' pho-app project.")
     (->files data
-             ["src/{{sanitized}}/foo.clj" (render "foo.clj" data)])))
+             ["project.clj" (render "project.clj" data)]
+             ["src/clj/{{sanitized}}/{{name}}.clj" (render "foo.clj" data)])))
