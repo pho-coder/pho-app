@@ -8,8 +8,9 @@
   "FIXME: write documentation"
   [name]
   (let [data {:name name
-              :sanitized (name-to-path name)}]
+              :sanitized (name-to-path "rocks.pho.apps")}]
     (main/info "Generating fresh 'lein new' pho-app project.")
     (->files data
              ["project.clj" (render "project.clj" data)]
-             ["src/clj/{{sanitized}}/{{name}}.clj" (render "foo.clj" data)])))
+             ["src/clj/{{sanitized}}/{{name}}.clj" (render "core.clj" data)]
+             ["src/clj/{{sanitized}}/{{name}}/config.clj" (render "config.clj" data)])))
