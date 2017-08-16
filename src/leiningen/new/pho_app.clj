@@ -13,4 +13,6 @@
     (->files data
              ["project.clj" (render "project.clj" data)]
              ["src/clj/{{sanitized}}/{{name}}.clj" (render "core.clj" data)]
-             ["src/clj/{{sanitized}}/{{name}}/config.clj" (render "config.clj" data)])))
+             ["src/clj/{{sanitized}}/{{name}}/config.clj" (render "config.clj" data)]
+             ["bin/{{name}}" (render "run" data)]
+             ["conf/logback.xml" (render "logback.xml" data)])))
